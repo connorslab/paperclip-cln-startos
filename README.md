@@ -49,7 +49,7 @@ A critical setup task blocks first startup. Follow instructions.md. All identiti
 
 ## Actions
 
-`configure`: stopped-only settings and web-token rotation. `connection-info`: private mTLS client bundle.
+`configure`: stopped-only labeled configuration fields, masked RPC password, existing-settings prefill, and an optional read-only node connection check. `connection-info`: private mTLS client bundle.
 
 ## Tasks
 

@@ -17,7 +17,7 @@ Peers: 9735; CLN gRPC: 9737; Hold gRPC: 9738. StartOS assigns external ports; co
 ## Setup
 
 1. Open **Interfaces** and note the LAN IP and the assigned CLN gRPC / Hold gRPC ports.
-2. Run **Configure test app**. Use the JSON below. Set a private XBT Knots RPC URL, its credentials, and `tls_host` to the LAN IP or stable hostname clients will actually use. Do not put a port in `tls_host`. Mainnet means XBT, not SHA-256 BTC.
+2. Run **Configure test app**. Fill in the labeled fields; existing settings are loaded automatically. Set a private XBT Knots RPC URL, its credentials, and `tls_host` to the LAN IP or stable hostname clients will actually use. Do not put a port in `tls_host`. Mainnet means XBT, not SHA-256 BTC.
 3. Start the app. The node generates fresh keys and persistent TLS credentials. Changing the TLS hostname later is intentionally refused; plan a credential migration instead.
 4. Run **CLN gRPC** to export the client connection bundle. It includes spending-capable client credentials: keep it private. Replace the two port placeholders with the assigned StartOS ports, then paste the bundle into the Ark app's `cln` configuration field. Never copy the CA signing key or server private key.
 5. Obtain the intended ASP's full public key through authenticated context, then set `trusted_server_key` before direct `pay` to Sideflash addresses. Do not infer trust from an arbitrary pasted address.
@@ -35,6 +35,8 @@ Sideflash uses the embedded offer with no directory lookup. A named `pay` reques
   "trusted_server_key": ""
 }
 ```
+
+The RPC password is masked. **Check node connection before saving** validates the endpoint without moving funds and explains common DNS/authentication failures. Disable it only to save settings while the node is temporarily offline. The JSON below is a reference, not something you need to edit.
 
 ## Backup and access
 

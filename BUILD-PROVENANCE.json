@@ -1,5 +1,5 @@
 {
-  "status": "Sideflash rc.1: runtime validated; StartOS device validation pending",
+  "status": "Sideflash rc.2: labeled configuration and connection check",
   "source_repository": "https://github.com/connorslab/lightning",
   "source_commit": "57366b39d5482a35c806327ba6a965c103d66fca",
   "architecture": "x86_64",
@@ -7,5 +7,5 @@
   "sdk": "2.0.9",
   "packager": "start-cli 2.1.0",
   "note": "Runtime images embedded in s9pk. Local experimental base images are not public registry tags. Artifact checksums supplied separately.",
-  "runtime_image_id": "sha256:7b0635ac606e262c825c263c1e00b0ae7e2b32c3062258b88a3df343f88885bc"
+  "runtime_image_id": "sha256:622bccc0ec1cf89b16c5195e5c5436e2964c95e981f032427af8637c45fc935c"
 }

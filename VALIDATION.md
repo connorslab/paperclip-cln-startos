@@ -12,3 +12,7 @@ Passed:
 Runtime tests used isolated Docker containers without published ports. No deposits, channels or payments were created.
 
 Not verified: installation on an actual StartOS device, platform backup/restore, ARM, StartOS 0.3.5, or funded end-to-end transfers using these exact packages. Sideload as separate test apps; this is not a production release.
+
+## rc.2 configuration update
+
+Replaces raw JSON with labeled fields while retaining the stored configuration schema and existing keys. SDK compilation and 12 configuration/connection tests pass. Node checks distinguish DNS, HTTP authentication and connectivity errors without logging secrets. StartOS device installation remains unverified.
