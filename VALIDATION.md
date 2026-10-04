@@ -20,3 +20,7 @@ Replaces raw JSON with labeled fields while retaining the stored configuration s
 ## rc.3
 
 All SDK packages compile. 26 configuration/connection tests pass across the packages. Isolated runtime integration verifies CLN identity persistence, authenticated RTL login and node/channel reads, ASP/watchman initialization, wallet creation, signed Sideflash address generation and wallet restart. No funds moved. Labeled forms retain the saved configuration schema and tokens. StartOS device installation and restore remain unverified.
+
+## rc.4
+
+CLN and Ark SDK compilation passed. Export/import of actual test credentials passed, preserving backend settings. The imported configuration started ASP/watchman successfully and generated a signed Sideflash address through the wallet. Twelve Ark configuration/import tests pass, including wrong-network/version, invalid endpoint and missing-key rejection. No funds moved. Platform URL-prefill and device installation remain unverified on StartOS hardware.

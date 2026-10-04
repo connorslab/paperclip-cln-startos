@@ -19,7 +19,7 @@ Peers: 9735; CLN gRPC: 9737; Hold gRPC: 9738. StartOS assigns external ports; co
 1. Open **Interfaces** and note the LAN IP and the assigned CLN gRPC / Hold gRPC ports.
 2. Run **Configure test app**. Fill in the labeled fields; existing settings are loaded automatically. Set a private XBT Knots RPC URL, its credentials, and `tls_host` to the LAN IP or stable hostname clients will actually use. Do not put a port in `tls_host`. Mainnet means XBT, not SHA-256 BTC.
 3. Start the app. The node generates fresh keys and persistent TLS credentials. Changing the TLS hostname later is intentionally refused; plan a credential migration instead.
-4. Run **CLN gRPC** to export the client connection bundle. It includes spending-capable client credentials: keep it private. Replace the two port placeholders with the assigned StartOS ports, then paste the bundle into the Ark app's `cln` configuration field. Never copy the CA signing key or server private key.
+4. Run **Connect Ark server**, confirm the prefilled HTTPS endpoints, and copy the private bundle. In the stopped Ark app, choose **Import CLN connection** and paste it. Keep the bundle private; it grants node access.
 5. Obtain the intended ASP's full public key through authenticated context, then set `trusted_server_key` before direct `pay` to Sideflash addresses. Do not infer trust from an arbitrary pasted address.
 
 Sideflash uses the embedded offer with no directory lookup. A named `pay` request needs the full `sfl1...` address, amount in millisats, an explicit `maxfee`, and a stable `label`. Reuse exactly the same label and parameters after a lost response. Lightning settlement alone does not prove the recipient's Ark claim. Ordinary invoice and offer RPCs remain available.
@@ -53,3 +53,11 @@ After CLN starts, open **Interfaces > RTL**. Use **RTL initial password** to rev
 Set the trusted ASP public key in Configure test app before Sideflash payments. Offers are enabled by default. CLN REST is loopback-only and is not exported. RTL requires authentication; keep the interface private.
 
 RTL settings and password changes persist in the additional `rtl` volume and are included in stopped-app backups. A password changed inside RTL replaces the generated initial password. Stop the app and sideload the update over the existing installation; do not uninstall or delete its data.
+
+## One-copy CLN connection (rc.4)
+
+In the running CLN app, open **Connect Ark server**. Matching enabled gRPC URLs are prefilled; otherwise copy the CLN and Hold HTTPS URLs from Interfaces. Run the action and copy the entire **Private connection bundle**. It contains spending-capable credentials: keep it private.
+
+Configure the Ark backend first, stop Ark, then open **Import CLN connection** and paste the bundle. This fills both endpoints and all three TLS credentials, enables Lightning, and preserves the other settings and tokens. Start Ark afterward. Importing validates the bundle but does not prove network reachability; your LAN/DNS and enabled interfaces still need to work.
+
+No individual certificate fields need copying. Export does not generate a funding address or move funds.
