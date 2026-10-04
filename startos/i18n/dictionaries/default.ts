@@ -1,0 +1,5 @@
+export const DEFAULT_LANG='en_US'
+const dict={"Configuration JSON": 0, "Use the example in the instructions. Keep passwords private.": 1, "Rotate access token": 2, "Invalidates the previous web access token on next start.": 3, "Configure test app": 4, "Configure this isolated test instance while stopped.": 5, "Experimental and unaudited. Back up before changing settings.": 6, "Unsupported network": 7, "Invalid endpoint": 8, "Configuration too large": 9, "Configuration saved": 10, "Start the app. Keep this credential private.": 11, "Access token": 12, "Configure the backend before starting": 13, "Database": 14, "Ready": 15, "Starting": 16, "Service": 17, "Stop the app before backing up its financial state": 18, "Peers": 19, "CLN gRPC": 20, "Hold gRPC": 21, "Operator interface": 22, "Ark endpoint": 23, "Wallet interface": 24, "Funding balances": 25, "Connection details and funding information": 26, "Keep these details private": 27} as const
+export type I18nKey=keyof typeof dict
+export type LangDict=Record<(typeof dict)[I18nKey],string>
+export default dict

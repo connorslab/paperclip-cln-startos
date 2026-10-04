@@ -1,0 +1,10 @@
+{
+  "status": "development; final artifact provenance pending",
+  "source_repository": "https://github.com/connorslab/lightning",
+  "source_commit": "57366b39d5482a35c806327ba6a965c103d66fca",
+  "architecture": "x86_64",
+  "startos": "0.4",
+  "sdk": "2.0.9",
+  "packager": "start-cli 2.1.0",
+  "note": "Dockerfile base images are local experimental build inputs, not published registry tags. No final artifact digest has been assigned."
+}

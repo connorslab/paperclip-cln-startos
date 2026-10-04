@@ -1,0 +1,9 @@
+{
+  "network": "bitcoin",
+  "rpc_url": "http://NODE_LAN_IP:8332",
+  "rpc_user": "RPC_USERNAME",
+  "rpc_password": "RPC_PASSWORD",
+  "alias": "Paperclip Sideflash Test",
+  "tls_host": "startos.local",
+  "trusted_server_key": ""
+}
