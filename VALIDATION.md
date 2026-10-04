@@ -1,9 +1,14 @@
-# Validation status
+# Sideflash rc.1 validation
 
-Experimental StartOS 0.4 / x86-64 packaging branch. SDK type checks and JavaScript compilation passed for all three packages.
+StartOS 0.4 / x86-64 experimental prerelease.
 
-Zero-funded Docker checks exercised fresh CLN identity persistence, Sideflash plugin loading, ASP setup/authentication and watchman startup, wallet creation and reusable-offer/Sideflash API access. Final Sideflash receive creation after an ASP restart remains under test.
+Passed:
+- SDK type checks and JavaScript compilation for all three packages.
+- Seven configuration unit tests per package (21 total).
+- Rebuilt runtime images; fresh CLN startup, active Sideflash plugin, persistent node identity.
+- ASP authentication, configuration validation, fresh server/watchman initialization.
+- Wallet creation against the packaged ASP, reusable BOLT12 offer, signed compact Sideflash receive address (823 characters), and wallet persistence after restart.
 
-Final image rebuild, signed s9pk packing/verification, StartOS installation, backup/restore, and funded end-to-end testing of the exact final artifacts are not yet complete. No production readiness is claimed. The user will sideload the resulting packages.
+Runtime tests used isolated Docker containers without published ports. No deposits, channels or payments were created.
 
-Configuration unit tests: 7 passed per package (21 total). Publication checks found no embedded private keys or known deployment credentials.
+Not verified: installation on an actual StartOS device, platform backup/restore, ARM, StartOS 0.3.5, or funded end-to-end transfers using these exact packages. Sideload as separate test apps; this is not a production release.
