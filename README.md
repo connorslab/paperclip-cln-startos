@@ -77,3 +77,7 @@ startos: "0.4"
 version: "0.1.0:0"
 production_ready: false
 ```
+
+## RTL sidecar
+
+Embeds connorslab/RTL commit `090f12d6b0b666afa8e8ffed34730aa2313eaeed` including Sideflash support. A separate authenticated HTTP daemon on port 3000 is exposed through StartOS HTTPS. CLN REST stays on loopback port 3010. RTL only mounts the credential subdirectory, not CLN keys or the Unix socket. Its rune excludes stop, createrune, makesecret, setconfig and plugin. The `rtl` volume persists UI settings and is backed up with all other volumes while stopped.

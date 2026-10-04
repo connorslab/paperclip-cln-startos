@@ -5,6 +5,6 @@ export const manifest = setupManifest({
   packageRepo: 'https://github.com/connorslab/paperclip-cln-startos',
   upstreamRepo: 'https://github.com/connorslab/lightning',
   marketingUrl: 'https://ark.paperclippool.xyz', donationUrl: null,
-  description: {short, long}, volumes: ["main", "startos"],
-  images: {"app": {"source": {"dockerTag": "paperclip-cln-startos:sideflash-20261004-1"}, "arch": ["x86_64"]}}, dependencies: {},
+  description: {short, long}, volumes: ["main", "startos", "rtl"],
+  images: {"rtl": {"source": {"dockerTag": "paperclip-rtl-startos:sideflash-rc3-package"}, "arch": ["x86_64"]},"app": {"source": {"dockerTag": "paperclip-cln-startos:sideflash-20261004-1"}, "arch": ["x86_64"]}}, dependencies: {},
 })

@@ -45,3 +45,11 @@ Stop the app, then use StartOS Backup. Back up all volumes, not only a seed. **C
 ## Validation limits
 
 See VALIDATION.md in the feature branch. These files have not been installed on a StartOS device by the builder. No mainnet funds are included. Start with tiny, disposable test amounts only after verifying connectivity, backup/restore and identity.
+
+## RTL channel management (rc.3)
+
+After CLN starts, open **Interfaces > RTL**. Use **RTL initial password** to reveal the generated password, then sign in. RTL uses a purple dark theme and includes the Sideflash patch. Channels, peers, invoices, offers and on-chain transactions operate on this CLN instance. Sending funds and opening/closing channels require your explicit actions in RTL.
+
+Set the trusted ASP public key in Configure test app before Sideflash payments. Offers are enabled by default. CLN REST is loopback-only and is not exported. RTL requires authentication; keep the interface private.
+
+RTL settings and password changes persist in the additional `rtl` volume and are included in stopped-app backups. A password changed inside RTL replaces the generated initial password. Stop the app and sideload the update over the existing installation; do not uninstall or delete its data.

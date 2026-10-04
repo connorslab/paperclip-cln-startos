@@ -1,5 +1,5 @@
 {
-  "status": "Sideflash rc.2: labeled configuration and connection check",
+  "status": "Sideflash rc.3: RTL and labeled setup forms",
   "source_repository": "https://github.com/connorslab/lightning",
   "source_commit": "57366b39d5482a35c806327ba6a965c103d66fca",
   "architecture": "x86_64",
@@ -7,5 +7,7 @@
   "sdk": "2.0.9",
   "packager": "start-cli 2.1.0",
   "note": "Runtime images embedded in s9pk. Local experimental base images are not public registry tags. Artifact checksums supplied separately.",
-  "runtime_image_id": "sha256:622bccc0ec1cf89b16c5195e5c5436e2964c95e981f032427af8637c45fc935c"
+  "runtime_image_id": "sha256:f70109104d8cb60adf76b9e967b7cb3f8b26cb06c1fc7aa46a56296e06220a09",
+  "rtl_source_commit": "090f12d6b0b666afa8e8ffed34730aa2313eaeed",
+  "rtl_image_id": "sha256:19faa34f393ddf9b36a1e648641da68fb249c80bb6deb22b7f629ebf44df7e0c"
 }
